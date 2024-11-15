@@ -82,7 +82,7 @@ router.put(`/:id`, async (req, res) => {
 
 // Create a router to delete the Menu data
 
-router.delete(`/:id`,async(req,res)=>{
+router.delete(`/:id`, async (req, res) => {
   try {
     const menuId = req.params.id; // Extract the id form the URL paramaete
     const response = await MenuItem.findByIdAndDelete(menuId);
@@ -97,5 +97,7 @@ router.delete(`/:id`,async(req,res)=>{
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
-})
+});
+
+// comment added for testing purpose 
 module.exports = router;
